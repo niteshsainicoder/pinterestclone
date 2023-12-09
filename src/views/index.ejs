@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: rgba(190, 219, 244, 0.615);
+        height: 100vh;
+        position: relative;
+      }
+
+      .main a{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: azure;
+        padding: 10px 20px;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .legend {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+      }
+      .container {
+       
+      }
+
+      .container input {
+       
+      }
+
+      .container input:hover {
+        border: 1px solid rgb(0, 0, 0);
+        padding: 9px;
+
+      }
+      .container form button {
+       
+      }
+
+      .container form button:hover {
+        transform: scale3d(1.2, 1.2, 1.2);
+        left: 40%;
+        background-color: #f65f5f;
+        transition: 0.5 all ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <label class="legend">Pinterest</label>
+        <form action="/index" method="post" enctype="multipart/form-data">
+          <input type="text" name="firstName" placeholder="Enter Your Name" />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Enter Your Last Name"
+          />
+          <input type="text" name="userName" placeholder="Your UserName" />
+          <input type="email" placeholder="eMail" name="eMail" />
+          <input type="text" name="password" placeholder="PassWord" />
+          <input type="file" name="avatar" placeholder="avatar" />
+          <input type="file" name="coverImage" id="coverImage" />
+          <button type="submit">Sing Up</button>
+        </form>
+      </div>
+
+      <a href="http://localhost:3000/login">Log In</a>
+    </div>
+  </body>
+</html>
