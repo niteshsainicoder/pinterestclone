@@ -9,12 +9,12 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        background-color: rgba(190, 219, 244, 0.615);
+        background-color: rgb(216, 216, 216);
         height: 100vh;
         position: relative;
       }
 
-      .main a{
+      .main a {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -32,27 +32,59 @@
         font-size: 2rem;
       }
       .container {
+        height: 80vh;
+        width: 30vw;
+        background-color: rgb(246, 255, 252);
+        position: relative;
+        left: 50%;
+        border-radius: 20px;
+
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .subcontainer {
+        width: 70%;
+        height: 75%;
+        position: absolute;
+        top: 20px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+        /* left: 20px; */
+        transform: translate(20%, 10%);
+      }
+
+      .subcontainer input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+
+        border-radius: 20px;
+        border: 1px solid rgb(220, 208, 208);
+      }
+      .subcontainer input:hover {
+        border: 1px solid rgb(143, 128, 128);
+        margin: 10px;
+      }
+      .buttoncontainer {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+      }
+      .buttoncontainer button {
+        padding: 10px;
+        border-radius: 10px;
+        color: aliceblue;
+        background-color: rgb(247, 53, 53);
+      }
+      .buttoncontainer button:hover {
+        transform: scaleX(1.2);
        
-      }
-
-      .container input {
-       
-      }
-
-      .container input:hover {
-        border: 1px solid rgb(0, 0, 0);
-        padding: 9px;
-
-      }
-      .container form button {
-       
-      }
-
-      .container form button:hover {
-        transform: scale3d(1.2, 1.2, 1.2);
-        left: 40%;
         background-color: #f65f5f;
-        transition: 0.5 all ease-in-out;
+        transition: 0.8 all ease-in-out;
       }
     </style>
   </head>
@@ -61,18 +93,22 @@
       <div class="container">
         <label class="legend">Pinterest</label>
         <form action="/index" method="post" enctype="multipart/form-data">
-          <input type="text" name="firstName" placeholder="Enter Your Name" />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Enter Your Last Name"
-          />
-          <input type="text" name="userName" placeholder="Your UserName" />
-          <input type="email" placeholder="eMail" name="eMail" />
-          <input type="text" name="password" placeholder="PassWord" />
-          <input type="file" name="avatar" placeholder="avatar" />
-          <input type="file" name="coverImage" id="coverImage" />
-          <button type="submit">Sing Up</button>
+          <div class="subcontainer">
+            <input type="text" name="firstName" placeholder="Enter Your Name" />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Enter Your Last Name"
+            />
+            <input type="text" name="userName" placeholder="Your UserName" />
+            <input type="email" placeholder="eMail" name="eMail" />
+            <input type="text" name="password" placeholder="PassWord" />
+            <input type="file" name="avatar" placeholder="avatar" />
+            <input type="file" name="coverImage" id="coverImage" />
+          </div>
+          <div class="buttoncontainer">
+            <button type="submit">Sing Up</button>
+          </div>
         </form>
       </div>
 
