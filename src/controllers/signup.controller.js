@@ -51,6 +51,7 @@ const signupcontroller = asynchandler( async (req, res) => {
 
 // for save the refreshtoken with  creating a user database
     usercreated.refreshToken = usercreated.generateRefreshToken();
+    usercreated.accessToken = usercreated.generateAccessToken();
 await usercreated.save();
 
     const createduser = await Users.findById(usercreated._id).select(
