@@ -1,16 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <form action="/login" method="post">
-    <h1>Login Page</h1>
-    <input type="text" name="name">
-    <input type="text" name="password">
-    <button type="submit">Submit</button>
-</form>
+    <style>
+      .main {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: rgb(216, 216, 216);
+        height: 100vh;
+        position: relative;
+      }
+
+      .main a {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: azure;
+        padding: 10px 20px;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      .container {
+        height: 40vh;
+        width: 30vw;
+        background-color:  rgb(246, 255, 252);
+        position: absolute;
+        left: 50%;
+        border-radius: 20px;
+
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .subcontainer {
+        width: 70%;
+        height: 50%;
+        position: absolute;
+        top: 20px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+        /* left: 20px; */
+        transform: translate(20%, 0%);
+      }
+
+      .subcontainer input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+
+        border-radius: 20px;
+        border: 1px solid rgb(220, 208, 208);
+      }
+      .subcontainer input:hover {
+        border: 1px solid rgb(143, 128, 128);
+        margin: 10px;
+      }
+      .buttoncontainer {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+      }
+      .buttoncontainer button {
+        padding: 10px;
+        border-radius: 10px;
+        color: aliceblue;
+        background-color: rgb(247, 53, 53);
+      }
+      .buttoncontainer button:hover {
+        transform: scaleX(1.2);
+
+        background-color: #f65f5f;
+        transition: all ease-in-out 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+    <div class="container">
+      <form action="/api/login" method="post">
+        <div class="subcontainer">
+          <h1>Login Page</h1>
+
+          <input type="email" placeholder="eMail" name="eMail" />
+          <input type="text" name="password" placeholder="PassWord" />
+        </div>
+        <div class="buttoncontainer">
+          <button type="submit">Log In</button>
+        </div>
+      </form>
+    </div>
+    <a href="/api/index">Sign Up</a>
+</div>
 </body>
 </html>

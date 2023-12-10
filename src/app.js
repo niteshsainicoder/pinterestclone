@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import { loginRoutes } from "./routes/login.routes.js";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -22,7 +21,7 @@ app.use(express.static("public"));
 // Set view engine and views directory path
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use("/V_1",loginRoutes);
+
 app.use(cookieParser());
 
 export { app };

@@ -8,14 +8,12 @@ const userschema = new Schema(
       required: true,
       unique: true,
       lowercase: true,
-      
     },
     userName: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
-     
     },
     eMail: {
       type: String,
@@ -23,16 +21,15 @@ const userschema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
-      
     },
     lastName: {
       type: String,
       required: true,
       trim: true,
-      default:null,
+      default: null,
       index: true,
     },
-   avatar: {
+    avatar: {
       type: String, //cloudinary
       required: true,
     },
@@ -46,17 +43,14 @@ const userschema = new Schema(
         ref: "Video",
       },
     ],
-    password: 
-    { type: String,
-       required: [true, "password is required"]
-       },
-   refreshToken: {
+    password: { type: String, required: [true, "password is required"] },
+    refreshToken: {
       type: String,
     },
   },
   { timestamps: true }
 );
-
+//step 1: passoword ko protect karne ke liye bcrypt karna automatically before the data save into database
 userschema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
@@ -81,14 +75,13 @@ userschema.methods.generateAccessToken = function () {
   );
 };
 userschema.methods.generateRefreshToken = function () {
-    return jwt.sign(
-        {
-          _id: this._id
-        },
-        process.env.RERESH_TOKEN_SECRET,
-        { expiresIn: RERESH_TOKEN_EXPIRY }
-      );
-    };
-
+  return jwt.sign(
+    {
+      _id: this._id,
+    },
+    process.env.REFRESH_TOKEN_SECRET,
+    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
+  );
+};
 
 export const Users = mongoose.model("User", userschema);
