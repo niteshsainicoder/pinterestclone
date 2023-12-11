@@ -61,9 +61,13 @@ await usercreated.save();
       throw new ApiError(500, "something went wrong while registering a user");
     }
 
-    return res
-      .status(201)
-      .json(new ApiResponse(200, createduser, "User Registered succesfully "));
+    console.log(`user created details ${usercreated}`);
+
+    return res.cookie('access_token', usercreated.accessToken, { 
+      maxAge: 24 * 60 * 60 * 1000, 
+      httpOnly: true,
+    }).status(201).json(new ApiResponse(200, createduser, "User Registered successfully"));
+
   }
 );
 
