@@ -46,7 +46,8 @@ const userschema = new Schema(
     password: { type: String, required: [true, "password is required"] },
     refreshToken: {
       type: String,
-    },refreshToken: {
+    },
+    refreshToken: {
       type: String,
     },
   },
@@ -71,7 +72,7 @@ userschema.methods.generateAccessToken = function () {
       eMail: this.eMail,
       userName: this.userName,
       lastNameName: this.lastName,
-      password:this.password,
+      password: this.password,
     },
     process.env.ACCESS_TOKEN_SECRET,
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
