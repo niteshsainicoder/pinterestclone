@@ -27,7 +27,7 @@
       .container {
         height: 40vh;
         width: 30vw;
-        background-color:  rgb(246, 255, 252);
+        background-color: rgb(246, 255, 252);
         position: absolute;
         left: 50%;
         border-radius: 20px;
@@ -83,20 +83,20 @@
   </head>
   <body>
     <div class="main">
-    <div class="container">
-      <form action="/api/login" method="post">
-        <div class="subcontainer">
-          <h1>Login Page</h1>
+      <div class="container">
+        <form action="/api/login" method="post">
+          <div class="subcontainer">
+            <h1>Login Page</h1>
 
-          <input type="text" placeholder="Username" name="userName" />
-          <input type="text" name="password" placeholder="PassWord" />
-        </div>
-        <div class="buttoncontainer">
-          <button type="submit">Log In</button>
-        </div>
-      </form>
+            <input type="text" placeholder="Username" name="userName" />
+            <input type="text" name="password" placeholder="PassWord" />
+          </div>
+          <div class="buttoncontainer">
+            <button type="submit">Log In</button>
+          </div>
+        </form>
+      </div>
+      <a href="/api/index">Sign Up</a>
     </div>
-    <a href="/api/index">Sign Up</a>
-</div>
-</body>
+  </body>
 </html>

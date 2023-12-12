@@ -4,7 +4,9 @@ import { app } from "./app.js";
 import { dbconnect } from "./db/index.db.js";
 import { signupRoutes } from "./routes/signup.routes.js";
 import { loginRoutes } from "./routes/login.routes.js";
+import { forgetpass } from "./routes/forgetpass.routes.js";
 app.use("/api", signupRoutes);
+app.use("/api", forgetpass);
 app.use("/api", loginRoutes);
 const PORT = process.env.PORT || 5000;
 const mongodb = await dbconnect()

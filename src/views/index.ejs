@@ -87,26 +87,7 @@
         transition: 0.8 all ease-in-out;
       }
     </style>
-    <script>
-      // Parse the JSON response
-      const response = JSON.parse(data);
-
-      // Extract access token from cookie
-      const accessToken = document.cookie.match(/access_token=([^;]+)/)[1];
-
-      // Check response status code and redirect if successful
-      if (response.status === 201) {
-        // Save access token in local storage
-        localStorage.setItem("accessToken", accessToken);
-
-        // Redirect to another route
-        window.location.href = "/login";
-      } else {
-        // Handle error based on response message
-        alert(response.message);
-      }
-    </script>
-  </head>
+      </head>
   <body>
     <div class="main">
       <div class="container">
